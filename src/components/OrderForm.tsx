@@ -7,7 +7,6 @@ const menuData = {
   "massa-branca": {
     name: "Massa Branca",
     price: 50,
-    img: "/images/bolo-branca.jpg", // Substitua pelo caminho de uma foto real dela depois
     flavors: [
       "Morango",
       "Abacaxi",
@@ -26,8 +25,7 @@ const menuData = {
   },
   "massa-chocolate": {
     name: "Massa Chocolate",
-    price: 55,
-    img: "/images/bolo-chocolate.jpg",
+    price: 60,
     flavors: [
       "Brigadeiro",
       "Sensação",
@@ -38,8 +36,7 @@ const menuData = {
   },
   "leite-ninho": {
     name: "Bolo de Leite Ninho",
-    price: 55,
-    img: "/images/bolo-ninho.jpg",
+    price: 60,
     flavors: [
       "Morango",
       "Brigadeiro",
@@ -92,7 +89,7 @@ export default function OrderForm() {
         ? `Entrega no endereço:\n${address}`
         : "Retirada no local";
 
-    const message = `Olá Selma! Gostaria de fazer uma encomenda:\n\n*Categoria:* ${currentCategory.name}\n*Sabor:* ${flavor}\n*Peso:* ${weight}kg\n*Embalagem:* ${packText}\n*Método:* ${deliveryText}\n\n*Valor Estimado:* R$ ${totalPrice.toFixed(2).replace(".", ",")}\n\nFico no aguardo da confirmação!`;
+    const message = `Olá Selma! Gostaria de fazer uma encomenda:\n\n*Bolo:* ${currentCategory.name}\n*Recheio de:* ${flavor}\n*Peso:* ${weight}kg\n*Embalagem:* ${packText}\n*Método:* ${deliveryText}\n\n*Valor Estimado:* R$ ${totalPrice.toFixed(2).replace(".", ",")}\n\nFico no aguardo da confirmação!`;
 
     window.open(
       `https://wa.me/5511973879147?text=${encodeURIComponent(message)}`,
@@ -106,20 +103,23 @@ export default function OrderForm() {
       id="cardapio"
     >
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div>
-          <h2 className="font-serif text-4xl font-bold text-primary mb-6">
-            Monte seu Bolo
-          </h2>
-          <p className="text-secondary mb-8 leading-relaxed">
-            Selecione a base, o sabor, o tamanho e como prefere receber. O preço
-            é calculado automaticamente.
-          </p>
-          <div className="relative rounded-2xl overflow-hidden aspect-square shadow-lg">
+        <div className="flex flex-col gap-10 lg:gap-16">
+          <div>
+            <h2 className="font-serif text-4xl font-bold text-primary mb-6">
+              Monte seu Bolo
+            </h2>
+            <p className="text-secondary mb-8 leading-relaxed">
+              Selecione a base, o sabor, o tamanho e como prefere receber. O
+              preço é calculado automaticamente.
+            </p>
+          </div>
+          <div className="relative rounded-3xl overflow-hidden aspect-square shadow-2xl border-4 border-white w-full max-w-[320px] mx-auto lg:mx-0 lg:max-w-none lg:w-full scale-95 hover:scale-100 transition-transform duration-300">
             <Image
-              src={currentCategory.img}
+              src="/images/orderform/orderform.webp"
               alt={currentCategory.name}
               fill
-              className="w-full h-full object-cover"
+              className="object-cover opacity-100"
+              sizes="(max-width: 1024px) 320px, 50vw"
             />
           </div>
         </div>
@@ -226,6 +226,9 @@ export default function OrderForm() {
                     setError("");
                   }}
                 />
+                <p className="text-sm text-secondary">
+                  Consultar taxa de entrega
+                </p>
                 {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
               </div>
             )}

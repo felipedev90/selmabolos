@@ -2,30 +2,30 @@ import Image from "next/image";
 
 const delicias = [
   {
-    src: "/images/bolo-chocolate.png",
-    alt: "Bolo de chocolate com morangos e KitKat",
+    src: "/images/nossasdelicias/bolo-chocolate.webp",
+    alt: "Bolo de chocolate prestígio",
     title: "Massa Chocolate",
   },
   {
-    src: "/images/bolo-borboleta-rosa.png",
-    alt: "Bolo decorado com borboletas rosas",
+    src: "/images/nossasdelicias/massa-branca.webp",
+    alt: "Bolo decorado",
     title: "Massa Branca Especial",
   },
   {
-    src: "/images/bolo-borboleta-azul.png",
-    alt: "Bolo decorado com borboletas azuis",
+    src: "/images/nossasdelicias/bolo-leite-ninho.webp",
+    alt: "Bolo decorado com recheio de ninho",
     title: "Bolo de Leite Ninho",
   },
   {
-    src: "/images/bolo-rosas.png",
-    alt: "Bolo decorado com rosas vermelhas",
+    src: "/images/nossasdelicias/bolo-trufado.webp",
+    alt: "Bolo decorado com kit-kat",
     title: "Bolo Trufado",
   },
 ];
 
 export default function NossasDelicias() {
   return (
-    <section className="py-24 px-6 bg-surface" id="delicias">
+    <section className="py-12 px-6 bg-surface" id="delicias">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl font-bold text-primary mb-4">
@@ -48,7 +48,7 @@ export default function NossasDelicias() {
                   src={delicia.src}
                   alt={delicia.alt}
                   fill
-                  sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
