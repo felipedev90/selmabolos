@@ -1,17 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  /* Garante que os links de âncora (#cardapio, #localizacao) deslizem suavemente */
   html {
     scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* Configuração perfeita para renderizar os ícones do Material Symbols */
   .material-symbols-outlined {
     font-variation-settings:
       "FILL" 0,
@@ -24,7 +22,6 @@
 }
 
 @layer utilities {
-  /* Classe utilitária extra para esconder a barra de rolagem (útil caso faça carrosseis de imagem depois) */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

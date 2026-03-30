@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import { Plus_Jakarta_Sans, Noto_Serif } from "next/font/google";
-import "./globals.css";
+import "@/src/styles/globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -27,12 +28,12 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Bakery",
     name: "Selma Bolos",
-    image: "https://selmabolos.com.br/images/hero/hero.webp", 
+    image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/hero/hero.webp`,
     description:
       "Confeitaria artesanal em Várzea Paulista especializada em bolos decorados, trufados e de leite ninho.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Rua Jataí, 55",
+      streetAddress: "Rua Tanque Velho, 55",
       addressLocality: "Várzea Paulista",
       addressRegion: "SP",
       postalCode: "13225-535",
@@ -48,14 +49,11 @@ export default function RootLayout({
         closes: "18:00",
       },
     ],
-    url: "https://selmabolos.com.br", 
+    url: process.env.NEXT_PUBLIC_SITE_URL,
   };
 
   return (
-    <html
-      lang="pt-BR"
-      className={`${jakarta.variable} ${noto.variable} scroll-smooth`}
-    >
+    <html lang="pt-BR" className={`${jakarta.variable} ${noto.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -63,6 +61,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-on-surface font-sans selection:bg-primary-container selection:text-on-primary-container min-h-screen antialiased">
+        <Toaster position="bottom-center" richColors />
         {children}
       </body>
     </html>
