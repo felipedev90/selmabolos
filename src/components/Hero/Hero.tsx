@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <header className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background">
+    <header
+      className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background"
+      id="hero"
+    >
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero/hero.webp"

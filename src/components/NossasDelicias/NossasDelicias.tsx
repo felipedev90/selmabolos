@@ -25,7 +25,10 @@ const delicias = [
 
 export default function NossasDelicias() {
   return (
-    <section className="py-6 md:py-12 px-6 bg-surface" id="delicias">
+    <section
+      className="py-6 md:py-18 md:mt-24 px-6 bg-surface scroll-mt-24 md:scroll-mt-32"
+      id="delicias"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl font-bold text-primary mb-4">
