@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Phone, Star } from "lucide-react";
 
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg
@@ -19,13 +19,26 @@ const InstagramIcon = ({ className }: { className?: string }) => (
 
 export default function Footer() {
   const whatsappNumber = "5511973879147";
+  const googleReviewLink = "https://share.google/zCE7IcIo0dn2AVlNs";
 
   return (
     <footer className="bg-[#745853] w-full pt-16 pb-12 text-[#faf9f6]">
-      <div className="max-w-7xl mx-auto px-8 flex flex-col items-center gap-10 text-center">
+      <div className="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8 text-center">
         <div className="font-serif italic text-3xl font-bold tracking-tight">
           Selma Bolos
         </div>
+
+        <a
+          href={googleReviewLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-6 py-3 mt-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 transition-all group"
+        >
+          <Star className="w-5 h-5 text-yellow-400 fill-yellow-400 group-hover:scale-110 transition-transform" />
+          <span className="font-medium text-sm md:text-base tracking-wide">
+            Nos avalie no Google
+          </span>
+        </a>
 
         <div className="flex gap-8 items-center">
           <a
@@ -43,13 +56,12 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-primary-container transition-colors group"
           >
-            {/* O ícone Phone é genérico, então continua existindo no Lucide */}
             <Phone className="w-8 h-8 opacity-90 group-hover:opacity-100" />
             <span className="sr-only">WhatsApp</span>
           </a>
         </div>
 
-        <div className="h-px w-24 bg-primary-container/20"></div>
+        <div className="h-px w-24 bg-primary-container/20 mt-4"></div>
         <p className="font-sans text-sm opacity-60">
           © 2026 Selma Bolos - O Toque Artesanal em Cada Fatia
         </p>
