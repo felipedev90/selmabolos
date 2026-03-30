@@ -1,3 +1,11 @@
+/* 
+- Componente de formulário de pedido para o site da Selma Bolos. 
+- Permite aos usuários selecionar a categoria do bolo, sabor do recheio, peso, método de recebimento (retirada ou entrega) e se desejam embalagem em caixa. 
+- O preço total é calculado automaticamente com base nas escolhas do usuário. 
+- Ao enviar o pedido, uma mensagem formatada é gerada e enviada para o WhatsApp da Selma para facilitar a comunicação e confirmação do pedido. 
+- O componente é responsivo e inclui animações suaves para uma melhor experiência do usuário.
+*/
+
 "use client";
 
 import Image from "next/image";
@@ -17,19 +25,23 @@ export default function OrderForm() {
   const [address, setAddress] = useState("");
 
   const currentCategory =
+    // Garantir que a categoria selecionada seja válida, caso contrário, usar a primeira do menu
     menuData.find((c) => c.name === category) || menuData[0];
   const totalPrice = currentCategory.price * weight + (packaging ? 10 : 0);
 
   const handleWhatsAppSubmit = () => {
+    // Validação básica para garantir que o peso seja pelo menos 1.5kg
     if (deliveryMethod === "entrega" && address.trim() === "") {
       toast.error("Por favor, informe o endereço completo para a entrega.");
       return;
     }
 
+    // Gerar a mensagem formatada para o WhatsApp
     const packText = packaging
       ? "Com embalagem em caixa"
       : "Sem embalagem em caixa";
 
+    // Incluir o endereço na mensagem apenas se o método de entrega for "entrega"
     const deliveryText =
       deliveryMethod === "entrega"
         ? `Entrega no endereço:\n${address}`
@@ -86,6 +98,7 @@ export default function OrderForm() {
                 className="w-full bg-white border-none rounded-xl py-4 px-4 focus:ring-2 focus:ring-primary shadow-sm outline-none cursor-pointer"
                 value={category}
                 onChange={(e) => {
+                  // Atualizar a categoria e resetar o sabor para o primeiro da nova categoria
                   const newCategory = e.target.value as MenuCategory;
                   setCategory(newCategory);
                   setFlavor(
