@@ -38,7 +38,7 @@ describe("OrderForm", () => {
 
     // 2. Altera a categoria para Massa Chocolate (R$60/kg)
     const selectCategoria = screen.getByLabelText(/Categoria do Bolo/i);
-    fireEvent.change(selectCategoria, { target: { value: "massa-chocolate" } });
+    fireEvent.change(selectCategoria, { target: { value: "Massa Chocolate" } });
 
     // Novo cálculo: R$60 * 1.5kg = R$ 90,00
     expect(screen.getByText("R$ 90,00")).toBeInTheDocument();
