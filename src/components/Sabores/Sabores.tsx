@@ -1,54 +1,12 @@
 import { CakeIcon } from "lucide-react";
+import { menuData } from "../../data/menuData";
 
 export default function Sabores() {
-  const menu = [
-    {
-      title: "Massa Branca",
-      price: "R$ 50,00/Kg",
-      flavors: [
-        "Morango",
-        "Abacaxi",
-        "Pêssego",
-        "Prestígio",
-        "Creme com pedaços de chocolate",
-        "Doce de leite (amendoim)",
-        "Doce de leite (coco)",
-        "Doce de leite (ameixa)",
-        "Doce de leite (abacaxi)",
-        "Doce de leite (morango)",
-        "Doce de leite (pedaços de chocolate)",
-        "Maracujá",
-        "Limão",
-      ],
-    },
-    {
-      title: "Massa Chocolate",
-      price: "R$ 60,00/Kg",
-      flavors: [
-        "Brigadeiro",
-        "Sensação",
-        "Prestígio",
-        "Ouro branco",
-        "Sonho de valsa",
-      ],
-    },
-    {
-      title: "Bolo de Leite Ninho",
-      price: "R$ 60,00/Kg",
-      flavors: [
-        "Morango",
-        "Brigadeiro",
-        "Coco",
-        "Abacaxi",
-        "Pedaços de chocolate",
-      ],
-    },
-    {
-      title: "Bolo Trufado",
-      price: "R$ 65,00/Kg",
-      flavors: ["Trufado", "Nozes", "Floresta negra", "Floresta branca"],
-    },
-  ];
+  const menu = menuData.map((item) => ({
+    title: item.name,
+    price: `R$ ${item.price},00/Kg`,
+    flavors: item.flavors,
+  }));
 
   return (
     <section className="py-6 px-6 bg-surface-container-low mt-6" id="sabores">

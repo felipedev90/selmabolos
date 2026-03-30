@@ -1,94 +1,43 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
-
-const menuData = {
-  "massa-branca": {
-    name: "Massa Branca",
-    price: 50,
-    flavors: [
-      "Morango",
-      "Abacaxi",
-      "Pêssego",
-      "Prestígio",
-      "Creme com pedaços de chocolate",
-      "Doce de leite (amendoim)",
-      "Doce de leite (coco)",
-      "Doce de leite (ameixa)",
-      "Doce de leite (abacaxi)",
-      "Doce de leite (morango)",
-      "Doce de leite (pedaços de chocolate)",
-      "Maracujá",
-      "Limão",
-    ],
-  },
-  "massa-chocolate": {
-    name: "Massa Chocolate",
-    price: 60,
-    flavors: [
-      "Brigadeiro",
-      "Sensação",
-      "Prestígio",
-      "Ouro branco",
-      "Sonho de valsa",
-    ],
-  },
-  "leite-ninho": {
-    name: "Bolo de Leite Ninho",
-    price: 60,
-    flavors: [
-      "Morango",
-      "Brigadeiro",
-      "Coco",
-      "Abacaxi",
-      "Pedaços de chocolate",
-    ],
-  },
-  trufado: {
-    name: "Bolo Trufado",
-    price: 65,
-    img: "/images/bolo-trufado.jpg",
-    flavors: ["Trufado", "Nozes", "Floresta negra", "Floresta branca"],
-  },
-};
-
-type CategoryKey = keyof typeof menuData;
+import { toast } from "sonner";
+import { useState } from "react";
+import { menuData } from "@/src/data/menuData";
+import { MenuCategory } from "@/src/types/menuType";
 
 export default function OrderForm() {
-  const [category, setCategory] = useState<CategoryKey>("massa-branca");
-  const [flavor, setFlavor] = useState(menuData["massa-branca"].flavors[0]);
+  const [category, setCategory] = useState<MenuCategory>("Massa Branca");
+  const [flavor, setFlavor] = useState<string>(menuData[0].flavors[0]);
   const [weight, setWeight] = useState<number>(1.5);
   const [packaging, setPackaging] = useState(false);
   const [deliveryMethod, setDeliveryMethod] = useState<"retirada" | "entrega">(
     "retirada",
   );
   const [address, setAddress] = useState("");
-  const [error, setError] = useState("");
 
-  useEffect(() => {
-    setFlavor(menuData[category].flavors[0]);
-  }, [category]);
-
-  const currentCategory = menuData[category];
+  const currentCategory =
+    menuData.find((c) => c.name === category) || menuData[0];
   const totalPrice = currentCategory.price * weight + (packaging ? 10 : 0);
 
   const handleWhatsAppSubmit = () => {
     if (deliveryMethod === "entrega" && address.trim() === "") {
-      setError("Por favor, informe o endereço completo para a entrega.");
+      toast.error("Por favor, informe o endereço completo para a entrega.");
       return;
     }
-    setError("");
 
     const packText = packaging
       ? "Com embalagem em caixa"
       : "Sem embalagem em caixa";
+
     const deliveryText =
       deliveryMethod === "entrega"
         ? `Entrega no endereço:\n${address}`
         : "Retirada no local";
 
     const message = `Olá Selma! Gostaria de fazer uma encomenda:\n\n*Bolo:* ${currentCategory.name}\n*Recheio de:* ${flavor}\n*Peso:* ${weight}kg\n*Embalagem:* ${packText}\n*Método:* ${deliveryText}\n\n*Valor Estimado:* R$ ${totalPrice.toFixed(2).replace(".", ",")}\n\nFico no aguardo da confirmação!`;
+
+    toast.success("Pedido enviado! Abrindo WhatsApp...");
 
     window.open(
       `https://wa.me/5511973879147?text=${encodeURIComponent(message)}`,
@@ -136,10 +85,17 @@ export default function OrderForm() {
                 id="category"
                 className="w-full bg-white border-none rounded-xl py-4 px-4 focus:ring-2 focus:ring-primary shadow-sm outline-none cursor-pointer"
                 value={category}
-                onChange={(e) => setCategory(e.target.value as CategoryKey)}
+                onChange={(e) => {
+                  const newCategory = e.target.value as MenuCategory;
+                  setCategory(newCategory);
+                  setFlavor(
+                    menuData.find((c) => c.name === newCategory)?.flavors[0] ||
+                      "",
+                  );
+                }}
               >
-                {Object.entries(menuData).map(([key, data]) => (
-                  <option key={key} value={key}>
+                {menuData.map((data) => (
+                  <option key={data.name} value={data.name}>
                     {data.name} (R$ {data.price},00/Kg)
                   </option>
                 ))}
@@ -203,10 +159,7 @@ export default function OrderForm() {
                     id="delivery-retirada"
                     className="hidden"
                     checked={deliveryMethod === "retirada"}
-                    onChange={() => {
-                      setDeliveryMethod("retirada");
-                      setError("");
-                    }}
+                    onChange={() => setDeliveryMethod("retirada")}
                   />
                   <span className="font-medium text-primary">
                     Retirar no local
@@ -239,19 +192,15 @@ export default function OrderForm() {
                 </label>
                 <textarea
                   id="address"
-                  className={`w-full bg-white border-2 rounded-xl py-3 px-4 focus:ring-primary shadow-sm outline-none resize-none ${error ? "border-red-500" : "border-transparent"}`}
+                  className="w-full bg-white border-2 border-transparent rounded-xl py-3 px-4 focus:ring-primary shadow-sm outline-none resize-none"
                   rows={2}
                   placeholder="Rua, Número, Bairro..."
                   value={address}
-                  onChange={(e) => {
-                    setAddress(e.target.value);
-                    setError("");
-                  }}
+                  onChange={(e) => setAddress(e.target.value)}
                 />
                 <p className="text-sm text-secondary">
                   Consultar taxa de entrega
                 </p>
-                {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
               </div>
             )}
 

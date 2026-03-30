@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Selma Bolos
 
-## Getting Started
+Landing page para uma confeitaria artesanal real, desenvolvida com Next.js 15 e Tailwind CSS. O projeto inclui cardápio completo, calculadora de preços interativa e integração com WhatsApp para pedidos.
 
-First, run the development server:
+🔗 **[Ver demo ao vivo](https://selmabolos.vercel.app)**
+
+
+
+## Funcionalidades
+
+- **Hero section** responsiva com imagem em WebP e gradiente
+- **Cardápio completo** com 4 categorias e mais de 25 sabores de recheio
+- **Calculadora de pedidos** com seleção de categoria, sabor, peso e método de entrega — preço atualizado em tempo real
+- **Integração com WhatsApp** — o pedido é montado e enviado como mensagem pré-formatada
+- **Galeria de produtos** com hover animado
+- **Seção de depoimentos** de clientes reais
+- **Mapa integrado** via Google Maps embed
+- **JSON-LD (Schema.org Bakery)** para SEO local
+- **Scroll suave** entre seções via âncoras
+
+---
+
+## Tech Stack
+
+| Tecnologia                                      | Uso                                        |
+| ----------------------------------------------- | ------------------------------------------ |
+| [Next.js 15](https://nextjs.org/)               | Framework (App Router, SSG)                |
+| [TypeScript](https://www.typescriptlang.org/)   | Tipagem estática                           |
+| [Tailwind CSS](https://tailwindcss.com/)        | Estilização com design tokens customizados |
+| [Lucide React](https://lucide.dev/)             | Ícones                                     |
+| [Vitest](https://vitest.dev/)                   | Testes unitários                           |
+| [Testing Library](https://testing-library.com/) | Testes de componentes                      |
+| [Vercel](https://vercel.com/)                   | Deploy e hospedagem                        |
+
+---
+
+## Rodando localmente
+
+**Pré-requisitos:** Node.js 18+
 
 ```bash
+# Clone o repositório
+git clone https://github.com/felipedev90/selmabolos.git
+cd selmabolos
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Testes
 
-## Learn More
+O componente `OrderForm` possui cobertura de testes com Vitest e Testing Library:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Os testes cobrem:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Renderização correta de todos os campos do formulário
+- Exibição condicional do campo de endereço ao selecionar "Entrega"
+- Cálculo de preço em tempo real (categoria + peso + embalagem)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estrutura do projeto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── layout.tsx       # Metadados, fontes e JSON-LD
+│   └── page.tsx         # Composição das seções
+├── components/
+│   ├── Footer/
+│   ├── Hero/
+│   ├── InfoSection/
+│   ├── Location/
+│   ├── NavBar/
+│   ├── NossasDelicias/
+│   ├── OrderForm/
+│   ├── Sabores/
+│   └── Testimonials/
+└── test/
+```
+
+---
+
+## Sobre o projeto
+
+Este é um projeto real desenvolvido para uma confeitaria artesanal localizada em Várzea Paulista, SP. O objetivo foi criar uma presença digital funcional e elegante que traduzisse a identidade artesanal da marca, com foco em conversão via WhatsApp.
+
+---
+
+## Autor
+
+**Felipe Silva** — Desenvolvedor Frontend Júnior
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/felipesilva90)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/felipedev90)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=flat&logo=google-chrome&logoColor=white)](https://felipe-silva90-portfolio.vercel.app)
