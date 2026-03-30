@@ -15,3 +15,9 @@ export type DeliciasType = {
   alt: string;
   title: string;
 };
+
+export type TestimonialType = {
+  name: string;
+  location: string;
+  text: string;
+};

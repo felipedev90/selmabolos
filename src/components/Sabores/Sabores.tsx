@@ -1,5 +1,5 @@
 import { CakeIcon } from "lucide-react";
-import { menuData } from "../../data/menuData";
+import { menuData } from "@/src/data/menuData";
 
 export default function Sabores() {
   const menu = menuData.map((item) => ({
