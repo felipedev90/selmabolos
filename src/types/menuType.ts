@@ -9,3 +9,9 @@ export type MenuCategory =
   | "Massa Chocolate"
   | "Bolo de Leite Ninho"
   | "Bolo Trufado";
+
+export type DeliciasType = {
+  src: string;
+  alt: string;
+  title: string;
+};

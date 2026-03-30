@@ -1,27 +1,7 @@
 import Image from "next/image";
+import { deliciasData } from "@/src/data/deliciasData";
 
-const delicias = [
-  {
-    src: "/images/nossasdelicias/bolo-chocolate.webp",
-    alt: "Bolo de chocolate prestígio",
-    title: "Massa Chocolate",
-  },
-  {
-    src: "/images/nossasdelicias/massa-branca.webp",
-    alt: "Bolo decorado",
-    title: "Massa Branca Especial",
-  },
-  {
-    src: "/images/nossasdelicias/bolo-leite-ninho.webp",
-    alt: "Bolo decorado com recheio de ninho",
-    title: "Bolo de Leite Ninho",
-  },
-  {
-    src: "/images/nossasdelicias/bolo-trufado.webp",
-    alt: "Bolo decorado com kit-kat",
-    title: "Bolo Trufado",
-  },
-];
+const delicias = deliciasData;
 
 export default function NossasDelicias() {
   return (

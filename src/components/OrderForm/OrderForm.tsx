@@ -36,6 +36,11 @@ export default function OrderForm() {
       return;
     }
 
+    if (weight < 1.5) {
+      toast.error("O peso mínimo do bolo é 1.5kg.");
+      return;
+    }
+
     // Gerar a mensagem formatada para o WhatsApp
     const packText = packaging
       ? "Com embalagem em caixa"
@@ -212,7 +217,8 @@ export default function OrderForm() {
                   onChange={(e) => setAddress(e.target.value)}
                 />
                 <p className="text-sm text-secondary">
-                  Consultar taxa de entrega
+                  Entregas de Seg. a Qui. - Valor da entrega será informado após
+                  confirmação do pedido.
                 </p>
               </div>
             )}
