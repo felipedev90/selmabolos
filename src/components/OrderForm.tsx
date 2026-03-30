@@ -74,7 +74,6 @@ export default function OrderForm() {
   const totalPrice = currentCategory.price * weight + (packaging ? 10 : 0);
 
   const handleWhatsAppSubmit = () => {
-    // Validação de endereço
     if (deliveryMethod === "entrega" && address.trim() === "") {
       setError("Por favor, informe o endereço completo para a entrega.");
       return;
@@ -99,7 +98,7 @@ export default function OrderForm() {
 
   return (
     <section
-      className="py-24 px-6 relative overflow-hidden bg-surface"
+      className="py-12 md:py-24 px-6 relative overflow-hidden bg-surface"
       id="cardapio"
     >
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -108,7 +107,7 @@ export default function OrderForm() {
             <h2 className="font-serif text-4xl font-bold text-primary mb-6">
               Monte seu Bolo
             </h2>
-            <p className="text-secondary mb-8 leading-relaxed">
+            <p className="text-secondary mb-1 md:mb-8 leading-relaxed">
               Selecione a base, o sabor, o tamanho e como prefere receber. O
               preço é calculado automaticamente.
             </p>
@@ -259,7 +258,7 @@ export default function OrderForm() {
             <button
               type="button"
               onClick={handleWhatsAppSubmit}
-              className="w-full bg-primary text-on-primary py-5 rounded-2xl font-bold text-xl hover:opacity-90 transition-all shadow-md"
+              className="w-full bg-primary text-on-primary px-1 py-5 rounded-2xl font-bold text-xl hover:opacity-90 transition-all shadow-md"
             >
               Enviar Pedido via WhatsApp
             </button>

@@ -9,14 +9,14 @@ export default function Hero() {
           alt="Bolos artesanais decorados com kit-kat e morangos."
           fill
           priority
-          className="object-cover object-center md:object-[80%_center] opacity-95"
+          className="object-cover object-top md:object-[100%_0] opacity-100"
           sizes="100vw"
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent z-10"></div>
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full mb-4">
+      <div className="relative z-20 max-w-7xl mx-auto px-2 w-full mb-4">
         <div className="max-w-2xl bg-white/20 lg:bg-white/70 p-8 rounded-3xl backdrop-blur-sm shadow-xl border border-white/50">
           <span className="inline-block text-center px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-medium text-sm tracking-wide mb-6">
             CONFEITARIA ARTESANAL EM VÁRZEA PAULISTA
