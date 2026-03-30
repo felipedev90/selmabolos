@@ -20,12 +20,20 @@ export default function InfoSection() {
         <div className="bg-surface p-8 rounded-2xl shadow-sm border border-outline-variant/30 text-center hover:shadow-md transition-shadow flex flex-col items-center">
           <Store className="w-10 h-10 text-primary mb-4" strokeWidth={1.5} />
           <h3 className="font-serif text-xl font-bold text-primary mb-2">
+            Entregas
+          </h3>
+          <p className="text-secondary font-medium mb-4">
+            Segunda, Terça, Quarta e Quinta
+          </p>
+          <h3 className="font-serif text-xl font-bold text-primary mb-2">
             Retiradas no Local
           </h3>
-          <p className="text-secondary font-medium">Sexta, Sábado e Domingo</p>
+          <p className="text-secondary font-medium mb-2">
+            Sexta, Sábado e Domingo
+          </p>
           <p className="text-sm text-secondary mt-2">
             Atendimento exclusivo para encomendas com retiradas programadas aos
-            finais de semana Embalagem (caixa) tem custo adicional de R$ 10,00.
+            finais de semana. Embalagem (caixa) tem custo adicional de R$ 10,00.
           </p>
         </div>
 
