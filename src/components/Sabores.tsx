@@ -23,7 +23,7 @@ export default function Sabores() {
     },
     {
       title: "Massa Chocolate",
-      price: "R$ 55,00/Kg",
+      price: "R$ 60,00/Kg",
       flavors: [
         "Brigadeiro",
         "Sensação",
@@ -34,7 +34,7 @@ export default function Sabores() {
     },
     {
       title: "Bolo de Leite Ninho",
-      price: "R$ 55,00/Kg",
+      price: "R$ 60,00/Kg",
       flavors: [
         "Morango",
         "Brigadeiro",
@@ -53,7 +53,7 @@ export default function Sabores() {
   return (
     <section className="py-6 px-6 bg-surface-container-low mt-6" id="sabores">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8  md:mb-16">
           <h2 className="font-serif text-4xl font-bold text-primary mb-2">
             Nosso Cardápio
           </h2>

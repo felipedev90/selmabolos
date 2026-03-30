@@ -3,9 +3,8 @@ import { Scale, Store, CreditCard } from "lucide-react";
 
 export default function InfoSection() {
   return (
-    <section className="py-16 px-6 bg-surface-container-low">
+    <section className="py-6 md:py-10 px-6 bg-surface-container-low">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Card 1: Pedido Mínimo */}
         <div className="bg-surface p-8 rounded-2xl shadow-sm border border-outline-variant/30 text-center hover:shadow-md transition-shadow flex flex-col items-center">
           <Scale className="w-10 h-10 text-primary mb-4" strokeWidth={1.5} />
           <h3 className="font-serif text-xl font-bold text-primary mb-2">
@@ -18,7 +17,6 @@ export default function InfoSection() {
           </p>
         </div>
 
-        {/* Card 2: Retiradas */}
         <div className="bg-surface p-8 rounded-2xl shadow-sm border border-outline-variant/30 text-center hover:shadow-md transition-shadow flex flex-col items-center">
           <Store className="w-10 h-10 text-primary mb-4" strokeWidth={1.5} />
           <h3 className="font-serif text-xl font-bold text-primary mb-2">
@@ -31,7 +29,6 @@ export default function InfoSection() {
           </p>
         </div>
 
-        {/* Card 3: Pagamento */}
         <div className="bg-surface p-8 rounded-2xl shadow-sm border border-outline-variant/30 text-center hover:shadow-md transition-shadow flex flex-col items-center">
           <CreditCard
             className="w-10 h-10 text-primary mb-4"
