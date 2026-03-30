@@ -2,9 +2,9 @@ import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 import InfoSection from "../components/InfoSection/InfoSection";
 import OrderForm from "../components/OrderForm/OrderForm";
-import NossasDelicias from "../components/NossasDelicias/NossasDelicias"; // NOVO
+import NossasDelicias from "../components/NossasDelicias/NossasDelicias";
 import Sabores from "../components/Sabores/Sabores";
-import Testimonials from "../components/Testimonials/Testimonials"; // NOVO
+import Testimonials from "../components/Testimonials/Testimonials";
 import Location from "../components/Location/Location";
 import Footer from "../components/Footer/Footer";
 
