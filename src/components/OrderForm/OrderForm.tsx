@@ -59,7 +59,7 @@ export default function OrderForm() {
 
   return (
     <section
-      className="py-12 md:py-24 px-6 relative overflow-hidden bg-surface"
+      className="py-12 md:py-24 px-6 relative overflow-hidden bg-surface scroll-mt-24 md:scroll-mt-32"
       id="cardapio"
     >
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-[#faf9f6]/90 backdrop-blur-md shadow-sm">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <div className="font-serif italic text-2xl text-primary font-bold tracking-tight">
-          <Link href="/">Selma Bolos</Link>
+          <Link href="#hero">Selma Bolos</Link>
         </div>
         <div className="hidden md:flex gap-6 items-center">
           <a
