@@ -126,10 +126,14 @@ export default function OrderForm() {
         <div className="bg-surface-container p-8 md:p-12 rounded-3xl shadow-xl">
           <form className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider">
+              <label
+                htmlFor="category"
+                className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider"
+              >
                 Categoria do Bolo
               </label>
               <select
+                id="category"
                 className="w-full bg-white border-none rounded-xl py-4 px-4 focus:ring-2 focus:ring-primary shadow-sm outline-none cursor-pointer"
                 value={category}
                 onChange={(e) => setCategory(e.target.value as CategoryKey)}
@@ -143,10 +147,14 @@ export default function OrderForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider">
+              <label
+                htmlFor="flavor"
+                className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider"
+              >
                 Sabor do Recheio
               </label>
               <select
+                id="flavor"
                 className="w-full bg-white border-none rounded-xl py-4 px-4 focus:ring-2 focus:ring-primary shadow-sm outline-none cursor-pointer"
                 value={flavor}
                 onChange={(e) => setFlavor(e.target.value)}
@@ -160,11 +168,15 @@ export default function OrderForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider">
+              <label
+                htmlFor="weight"
+                className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider"
+              >
                 Peso do Bolo (Mínimo 1.5kg)
               </label>
               <input
                 type="number"
+                id="weight"
                 min="1.5"
                 step="0.5"
                 className="w-full bg-white border-none rounded-xl py-4 px-4 focus:ring-2 focus:ring-primary shadow-sm outline-none"
@@ -174,16 +186,21 @@ export default function OrderForm() {
             </div>
 
             <div className="pt-2">
-              <label className="block text-sm font-semibold text-primary mb-3 uppercase tracking-wider">
+              <label
+                htmlFor="delivery"
+                className="block text-sm font-semibold text-primary mb-3 uppercase tracking-wider"
+              >
                 Método de Recebimento
               </label>
               <div className="flex gap-4">
                 <label
+                  htmlFor="delivery-retirada"
                   className={`flex-1 flex items-center justify-center gap-2 p-4 rounded-xl cursor-pointer border-2 transition-all ${deliveryMethod === "retirada" ? "border-primary bg-primary-container/20" : "border-transparent bg-white shadow-sm"}`}
                 >
                   <input
                     type="radio"
                     name="delivery"
+                    id="delivery-retirada"
                     className="hidden"
                     checked={deliveryMethod === "retirada"}
                     onChange={() => {
@@ -196,11 +213,13 @@ export default function OrderForm() {
                   </span>
                 </label>
                 <label
+                  htmlFor="delivery-entrega"
                   className={`flex-1 flex items-center justify-center gap-2 p-4 rounded-xl cursor-pointer border-2 transition-all ${deliveryMethod === "entrega" ? "border-primary bg-primary-container/20" : "border-transparent bg-white shadow-sm"}`}
                 >
                   <input
                     type="radio"
                     name="delivery"
+                    id="delivery-entrega"
                     className="hidden"
                     checked={deliveryMethod === "entrega"}
                     onChange={() => setDeliveryMethod("entrega")}
@@ -212,10 +231,14 @@ export default function OrderForm() {
 
             {deliveryMethod === "entrega" && (
               <div className="animate-in fade-in duration-300">
-                <label className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider">
+                <label
+                  htmlFor="address"
+                  className="block text-sm font-semibold text-primary mb-2 uppercase tracking-wider"
+                >
                   Endereço de Entrega
                 </label>
                 <textarea
+                  id="address"
                   className={`w-full bg-white border-2 rounded-xl py-3 px-4 focus:ring-primary shadow-sm outline-none resize-none ${error ? "border-red-500" : "border-transparent"}`}
                   rows={2}
                   placeholder="Rua, Número, Bairro..."
@@ -232,9 +255,13 @@ export default function OrderForm() {
               </div>
             )}
 
-            <label className="flex items-center gap-3 cursor-pointer group pt-2">
+            <label
+              htmlFor="packaging"
+              className="flex items-center gap-3 cursor-pointer group pt-2"
+            >
               <input
                 type="checkbox"
+                id="packaging"
                 className="w-6 h-6 rounded-md text-primary focus:ring-primary border-gray-300 shadow-sm"
                 checked={packaging}
                 onChange={(e) => setPackaging(e.target.checked)}
