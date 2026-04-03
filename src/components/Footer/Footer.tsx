@@ -63,7 +63,15 @@ export default function Footer() {
 
         <div className="h-px w-24 bg-primary-container/20 mt-4"></div>
         <p className="font-sans text-sm opacity-60">
-          © 2026 Selma Bolos - O Toque Artesanal em Cada Fatia
+          © {new Date().getFullYear()} Criado e desenvolvido por{" "}
+          <a
+            href="https://felipe-silva90-portfolio.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary-container transition-colors"
+          >
+            Felipe Augusto 🍃
+          </a>
         </p>
       </div>
     </footer>
