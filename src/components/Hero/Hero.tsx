@@ -14,6 +14,9 @@ export default function Hero() {
           alt="Bolo artesanal da Selma"
           fill
           priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={65}
           className="object-cover object-center opacity-[0.75] "
         />
       </div>
