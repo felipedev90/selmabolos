@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
-import { Plus_Jakarta_Sans, Noto_Serif } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Noto_Serif,
+  DM_Serif_Display,
+  Alex_Brush,
+} from "next/font/google";
 import "@/src/styles/globals.css";
 
+// --- CONFIGURAÇÃO DAS FONTES ---
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-sans",
 });
+
 const noto = Noto_Serif({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  variable: "--font-noto",
+  weight: ["400", "700"],
+  variable: "--font-serif",
+});
+
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const alexBrush = Alex_Brush({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-hand",
 });
 
 export const metadata: Metadata = {
@@ -53,14 +73,21 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="pt-BR" className={`${jakarta.variable} ${noto.variable}`}>
+    <html
+      lang="pt-BR"
+      // Aqui inserimos TODAS as variáveis de fonte para o Tailwind enxergar
+      className={`${jakarta.variable} ${noto.variable} ${dmSerif.variable} ${alexBrush.variable}`}
+      data-variation="aconchegante"
+      data-palette="blush-cacao"
+      data-density="comfortable"
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-background text-on-surface font-sans selection:bg-primary-container selection:text-on-primary-container min-h-screen antialiased">
+      <body className="bg-bg text-ink font-sans selection:bg-primary selection:text-primary-ink min-h-screen antialiased">
         <Toaster position="bottom-center" richColors />
         {children}
       </body>

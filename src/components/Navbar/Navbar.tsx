@@ -2,42 +2,48 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#faf9f6]/90 backdrop-blur-md shadow-sm">
+    <nav className="sticky top-0 w-full z-50 bg-[#faf9f6]/90 backdrop-blur-md shadow-sm">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <div className="font-serif italic text-2xl text-primary font-bold tracking-tight">
+        <div className="font-hand italic font-bold text-4xl lg:text-5xl text-primary tracking-wide">
           <Link href="#hero">Selma Bolos</Link>
         </div>
-        <div className="hidden md:flex gap-6 items-center">
+        <div className="hidden md:flex gap-8 items-center text-3xl font-medium font-hand">
           <a
-            className="font-sans font-medium text-secondary hover:text-primary transition-colors"
-            href="#delicias"
-          >
-            Nossas Delícias
-          </a>
-          <a
-            className="font-sans font-medium text-secondary hover:text-primary transition-colors"
+            className=" text-secondary hover:text-primary transition-colors"
             href="#sabores"
           >
-            Cardápio
+            Sabores
           </a>
           <a
-            className="font-sans font-medium text-secondary hover:text-primary transition-colors"
-            href="#depoimentos"
+            className=" text-secondary hover:text-primary transition-colors"
+            href="#encomendar"
           >
-            Depoimentos
+            Como encomendar
           </a>
           <a
-            className="font-sans font-medium text-secondary hover:text-primary transition-colors"
+            className="  text-secondary hover:text-primary transition-colors"
+            href="#monte-seu-bolo"
+          >
+            Monte seu bolo
+          </a>
+          <a
+            className=" text-secondary hover:text-primary transition-colors"
+            href="#galeria"
+          >
+            Galeria
+          </a>
+          <a
+            className="  text-secondary hover:text-primary transition-colors"
             href="#localizacao"
           >
-            Onde Estamos
+            Contato
           </a>
         </div>
         <a
-          className="bg-primary text-on-primary px-6 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity"
+          className="bg-primary font-sans text-bg px-4 py-2 md:px-6 rounded-theme-lg  md:font-medium hover:opacity-90 transition-opacity"
           href="#cardapio"
         >
-          Peça Agora
+          Encomendar
         </a>
       </div>
     </nav>
