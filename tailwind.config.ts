@@ -9,28 +9,44 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "on-primary-fixed": "#2f1314",
-        primary: "#7b5455",
-        secondary: "#745853",
-        tertiary: "#bc004f",
-        background: "#faf9f6",
-        surface: "#faf9f6",
-        "surface-container": "#efeeeb",
-        "surface-container-low": "#f4f3f1",
-        "on-surface": "#1a1c1a",
-        "on-primary": "#ffffff",
-        "primary-container": "#f4c2c2",
-        "on-primary-container": "#734e4e",
-        "secondary-container": "#fed7d0",
-        "on-secondary-container": "#795c57",
-        "outline-variant": "#d4c2c2",
+        bg: "var(--bg)",
+        "bg-alt": "var(--bg-alt)",
+        surface: "var(--surface)",
+        ink: "var(--ink)",
+        "ink-soft": "var(--ink-soft)",
+        muted: "var(--muted)",
+        primary: "var(--primary)",
+        "primary-ink": "var(--primary-ink)",
+        accent: "var(--accent)",
+        "accent-2": "var(--accent-2)",
+        "accent-3": "var(--accent-3)",
+        line: "var(--line)",
       },
       fontFamily: {
-        serif: ["var(--font-noto)"],
-        sans: ["var(--font-jakarta)"],
+        sans: ["var(--font-sans)"],
+        serif: ["var(--font-serif)"],
+        display: ["var(--font-display)"],
+        hand: ["var(--font-hand)"],
+      },
+      spacing: {
+        "section-y": "var(--d-section-y)",
+        "block-gap": "var(--d-block-gap)",
+        "card-pad": "var(--d-card-pad)",
+      },
+      borderRadius: {
+        "theme-lg": "var(--d-radius-lg)",
+        "theme-md": "var(--d-radius-md)",
+        "theme-sm": "var(--d-radius-sm)",
+      },
+      boxShadow: {
+        theme: "var(--shadow)",
+      },
+      backgroundImage: {
+        "paper-noise": "var(--paper-noise)",
       },
     },
   },
   plugins: [],
 };
+
 export default config;

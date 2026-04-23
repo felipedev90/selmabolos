@@ -1,51 +1,112 @@
+"use client";
+
+import { useState } from "react";
+import { MapPin, Phone, Clock, Map } from "lucide-react";
+
 export default function Location() {
+  // Estado para controlar se o iframe do mapa deve ser renderizado
+  const [showMap, setShowMap] = useState(false);
+
   return (
-    <section className="py-24 px-6 bg-surface" id="localizacao">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="font-serif text-4xl font-bold text-primary mb-6">
-            Onde Estamos
-          </h2>
-          <p className="text-secondary leading-relaxed">
-            Estamos localizados em Várzea Paulista, próximo à Fornecedora
-            Indaía.
+    <section
+      className="py-section-y px-6 bg-bg-alt md:scroll-mt-32"
+      id="localizacao"
+    >
+      <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        {/* COLUNA ESQUERDA: Texto e Contatos */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <span className="font-hand text-2xl md:text-3xl text-primary -rotate-3 inline-block mb-1">
+              Onde estamos
+            </span>
+            <h2 className="font-display text-5xl md:text-6xl text-ink leading-[1.1]">
+              Pertinho de você em <br className="hidden md:block" /> Várzea
+              Paulista
+            </h2>
+          </div>
+
+          <p className="font-sans text-ink-soft text-lg leading-relaxed max-w-lg mb-4">
+            Atendemos por WhatsApp e agendamento. Retiradas nos finais de
+            semana, entregas de segunda a quinta.
           </p>
 
-          <p className="text-secondary mb-8 leading-relaxed">
-            Prontos para atender você com o carinho que sua encomenda merece.
-          </p>
-          <p className="text-secondary mb-8 leading-relaxed">
-            Aceitamos retiradas agendadas aos finais de semana e entrega
-            mediante agendamento.
-          </p>
-          <div className="space-y-4">
-            <div className="flex items-center gap-4 text-primary">
-              <span className="font-medium">
-                Rua Tanque Velho, 55 - Vila Iguaçu <br />
-                Várzea Paulista - SP
-                <br />
-                CEP 13225535
-              </span>
+          {/* Lista de Contatos/Infos */}
+          <div className="space-y-4 max-w-md">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-theme-md bg-primary/15 flex items-center justify-center flex-shrink-0 text-primary">
+                <MapPin size={24} />
+              </div>
+              <div className="pt-1">
+                <p className="font-sans font-semibold text-ink text-base">
+                  Rua Tanque Velho, 55 — Vila Iguaçu
+                </p>
+                <p className="font-sans text-ink-soft text-sm">
+                  Várzea Paulista, SP • CEP 13225-535
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-4 text-primary">
-              <span className="font-medium">
-                Sábados e Domingos: Retiradas Agendadas
-              </span>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-theme-md bg-primary/15 flex items-center justify-center flex-shrink-0 text-primary">
+                <Phone size={24} />
+              </div>
+              <div className="pt-1">
+                <p className="font-sans font-semibold text-ink text-base">
+                  (11) 97387-9147
+                </p>
+                <p className="font-sans text-ink-soft text-sm">
+                  WhatsApp preferencial
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-theme-md bg-primary/15 flex items-center justify-center flex-shrink-0 text-primary">
+                <Clock size={24} />
+              </div>
+              <div className="pt-1">
+                <p className="font-sans font-semibold text-ink text-base">
+                  Seg-Qui • Entregas
+                </p>
+                <p className="font-sans text-ink-soft text-sm">
+                  Sex-Dom • Retiradas agendadas
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="rounded-3xl overflow-hidden shadow-2xl h-96 relative bg-gray-200">
-          <iframe
-            title="Localização Várzea Paulista"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.6240709153298!2d-46.849029430312406!3d-23.22501699868953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf20ebf2eb4119%3A0xd1e5d6fdfff2ad7!2sR.%20Tanque%20Velho%2C%2055%20-%20Vila%20Iguacu%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013225-600!5e0!3m2!1spt-BR!2sbr!4v1774880468957!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+        {/* COLUNA DIREITA: MAPA (Com Facade Pattern) */}
+        <div className="rounded-theme-lg overflow-hidden shadow-theme h-[400px] md:h-[500px] relative bg-surface border border-line flex items-center justify-center">
+          {!showMap ? (
+            // FACHADA: Interface leve que aparece antes de carregar o mapa pesado
+            <div className="flex flex-col items-center justify-center gap-4 p-6 text-center w-full h-full bg-surface">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+                <Map size={32} />
+              </div>
+              <p className="font-sans text-ink-soft max-w-[250px]">
+                Clique para visualizar o mapa interativo do Google.
+              </p>
+              <button
+                onClick={() => setShowMap(true)}
+                className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-theme-md font-sans font-medium text-ink border border-line hover:border-primary hover:text-primary transition-colors bg-bg"
+              >
+                Carregar Mapa
+              </button>
+            </div>
+          ) : (
+            // IFRAME REAL: Só é renderizado após o clique
+            <iframe
+              title="Localização Várzea Paulista"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.6240709153298!2d-46.849029430312406!3d-23.22501699868953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf20ebf2eb4119%3A0xd1e5d6fdfff2ad7!2sR.%20Tanque%20Velho%2C%2055%20-%20Vila%20Iguacu%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013225-600!5e0!3m2!1spt-BR!2sbr!4v1774880468957!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          )}
         </div>
       </div>
     </section>

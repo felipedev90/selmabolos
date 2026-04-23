@@ -37,6 +37,13 @@
     "typescript": "^5",
     "vitest": "^4.1.2"
   },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not op_mini all",
+    "safari >= 15.4",
+    "chrome >= 92"
+  ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix"
   }

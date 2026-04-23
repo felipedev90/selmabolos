@@ -1,40 +1,56 @@
 import { Star } from "lucide-react";
 import { testimonialsData } from "@/src/data/testimonialsData";
 
-const testimonials = testimonialsData;
-
 export default function Testimonials() {
   return (
     <section
-      className="py-12 md:py-24 px-6 bg-surface-container-low"
+      // Usando py-section-y e bg-bg-alt do nosso design system
+      className="py-section-y px-6 bg-bg"
       id="depoimentos"
     >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="font-serif text-4xl font-bold text-primary mb-8 md:mb-16 text-center italic">
-          O que dizem nossos clientes
+      {/* CABEÇALHO PADRONIZADO */}
+      <div className="text-center flex flex-col items-center gap-2 mb-12 md:mb-16">
+        <span className="font-hand text-3xl md:text-4xl text-primary -rotate-3 inline-block">
+          Clientes felizes
+        </span>
+        <h2 className="font-display text-5xl md:text-6xl text-ink">
+          O que dizem por aí
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-stretch">
-          {testimonials.map((t, index) => (
+      </div>
+
+      <div className="max-w-[1240px] mx-auto">
+        {/* GRID DOS DEPOIMENTOS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-block-gap items-stretch">
+          {testimonialsData.map((t, index) => (
             <div key={index} className="relative pt-8 h-full">
-              {" "}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-8xl text-primary-container opacity-50 font-serif leading-none">
+              {/* Aspas decorativas usando a cor primária transparente */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-8xl text-primary/20 font-serif leading-none z-0">
                 “
               </div>
-              <div className="bg-surface p-8 rounded-2xl shadow-md text-center h-full flex flex-col relative z-10 border border-outline-variant/30">
-                {" "}
-                <p className="text-secondary italic mb-6 leading-relaxed flex-grow">
-                  {" "}
+
+              {/* CARTÃO - Aplicando bg-surface, p-card-pad, rounded-theme-lg e shadow-theme */}
+              <div className="bg-surface p-card-pad rounded-theme-lg shadow-theme h-full flex flex-col relative z-10">
+                {/* Texto do depoimento */}
+                <p className="font-sans text-ink-soft italic mb-6 leading-relaxed flex-grow text-center">
                   {`"${t.text}"`}
                 </p>
-                <div className="mt-auto">
-                  {" "}
-                  <div className="font-bold text-primary">{t.name}</div>
-                  <div className="text-sm text-secondary">{t.location}</div>
-                  <div className="flex justify-center mt-3 gap-0.5">
+
+                {/* Autor e Avaliação */}
+                <div className="mt-auto text-center">
+                  <div className="font-serif font-bold text-lg text-primary">
+                    {t.name}
+                  </div>
+                  <div className="font-sans text-sm text-ink-soft">
+                    {t.location}
+                  </div>
+
+                  {/* Estrelas usando a cor 'accent' (mel/dourado) definida na paleta */}
+                  <div className="flex justify-center mt-4 gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-5 h-5 text-yellow-500 fill-yellow-400"
+                        size={18}
+                        className="text-accent fill-accent"
                       />
                     ))}
                   </div>

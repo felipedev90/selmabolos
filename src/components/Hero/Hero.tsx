@@ -1,44 +1,76 @@
 import Image from "next/image";
+import { Star, Cake } from "lucide-react";
 
 export default function Hero() {
   return (
     <header
-      className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background"
-      id="hero"
+      id="top"
+      className="relative flex items-center overflow-hidden min-h-[92vh] max-h-[860px] py-section-y"
     >
-      <div className="absolute inset-0 z-0">
+      {/* Background image */}
+      <div className="absolute inset-0 bg-bg-alt overflow-hidden -z-10">
         <Image
           src="/images/hero/hero.webp"
-          alt="Bolos artesanais decorados com kit-kat e morangos."
+          alt="Bolo artesanal da Selma"
           fill
           priority
-          className="object-cover object-top md:object-[100%_0] opacity-100"
+          fetchPriority="high"
           sizes="100vw"
+          quality={65}
+          className="object-cover object-center opacity-[0.75] "
         />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent z-10"></div>
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-2 w-full mb-4">
-        <div className="max-w-2xl bg-white/20 lg:bg-white/70 p-8 rounded-3xl backdrop-blur-sm shadow-xl border border-white/50">
-          <span className="inline-block text-center px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-medium text-sm tracking-wide mb-6">
-            CONFEITARIA ARTESANAL EM VÁRZEA PAULISTA
+      <div className="max-w-[1240px] mx-auto px-6 w-full relative z-10">
+        <div
+          className="max-w-[560px] rounded-theme-lg border p-card-pad shadow-theme"
+          style={{
+            background: "color-mix(in oklch, var(--surface) 65%, transparent)",
+            backdropFilter: "blur(20px) saturate(1.2)",
+            WebkitBackdropFilter: "blur(20px) saturate(1.2)",
+            borderColor: "color-mix(in oklch, var(--surface) 80%, transparent)",
+          }}
+        >
+          <span
+            className="inline-flex items-center gap-2 text-[12px] font-sans font-semibold uppercase tracking-[0.09em] text-ink px-3.5 py-1.5 rounded-full mb-6"
+            style={{
+              background:
+                "color-mix(in oklch, var(--accent) 45%, var(--surface))",
+            }}
+          >
+            <Star size={14} className="text-primary fill-primary/20" />
+            Confeitaria artesanal · Várzea Paulista
           </span>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-primary leading-tight mb-6 -tracking-wider">
-            Bolos Artesanais que Transformam Momentos em Memórias
+
+          {/* Substituindo a classe .display fictícia pelos nossos tokens */}
+          <h1 className="font-display text-5xl md:text-6xl text-ink leading-tight">
+            Bolos que transformam{" "}
+            <em className="text-primary font-serif italic">momentos</em> em
+            memórias
           </h1>
-          <p className="text-xl text-secondary max-w-lg leading-relaxed">
-            Sabor de infância com a elegância que seu evento merece.
+
+          {/* Substituindo a classe .lede fictícia */}
+          <p className="font-sans text-lg text-ink-soft mt-5">
+            Sabor de infância com a elegância que seu evento merece. Cada fatia
+            é produzida à mão, com ingredientes selecionados e muito carinho.
           </p>
-          <p className="text-xl text-secondary mb-10 max-w-lg leading-relaxed">
-            Cada fatia é produzida com ingredientes selecionados e muito amor.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+
+          <div className="flex gap-4 mt-8 flex-wrap">
+            {/* Construindo o Botão Primário com Tailwind */}
             <a
-              className="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all text-center"
               href="#cardapio"
+              className="inline-flex items-center gap-2 bg-primary text-primary-ink px-6 py-3 rounded-theme-md font-sans font-medium transition-transform hover:scale-105 shadow-theme"
             >
-              Faça sua Encomenda
+              Monte seu bolo
+              <Cake size={18} />
+            </a>
+
+            {/* Construindo o Botão Ghost com Tailwind */}
+            <a
+              href="#sabores"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-theme-md font-sans font-medium text-ink border border-line hover:bg-surface transition-colors bg-surface/50 backdrop-blur-sm"
+            >
+              Ver sabores
             </a>
           </div>
         </div>

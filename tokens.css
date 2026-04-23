@@ -1,0 +1,151 @@
+/* =========================================================
+   DESIGN TOKENS — 3 direções (A) Aconchegante (B) Lúdica (C) Híbrida
+   + 3 paletas alternativas como tweak
+   ========================================================= */
+
+:root {
+  /* Typography */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "DM Serif Display", Georgia, serif;
+  --font-display: "DM Serif Display", "Playfair Display", Georgia, serif;
+  --font-hand: "Caveat", cursive;
+
+  /* Density defaults (comfortable) */
+  --d-section-y: clamp(64px, 9vw, 120px);
+  --d-block-gap: 32px;
+  --d-card-pad: 28px;
+  --d-radius-lg: 28px;
+  --d-radius-md: 18px;
+  --d-radius-sm: 12px;
+}
+
+/* ---------- DENSITY ---------- */
+[data-density="compact"] {
+  --d-section-y: clamp(40px, 6vw, 72px);
+  --d-block-gap: 20px;
+  --d-card-pad: 20px;
+}
+[data-density="comfortable"] {
+  --d-section-y: clamp(64px, 9vw, 120px);
+  --d-block-gap: 32px;
+  --d-card-pad: 28px;
+}
+[data-density="spacious"] {
+  --d-section-y: clamp(96px, 13vw, 180px);
+  --d-block-gap: 48px;
+  --d-card-pad: 40px;
+}
+
+/* =========================================================
+   VARIATION A — ARTESANAL ACONCHEGANTE
+   Pastel quentes, textura papel, serif humanista
+   ========================================================= */
+[data-variation="aconchegante"] {
+  /* warm-cream (default) */
+  --bg:            oklch(0.97 0.02 75);    /* creme quente */
+  --bg-alt:        oklch(0.94 0.03 70);
+  --surface:       oklch(0.99 0.01 80);
+  --ink:           oklch(0.28 0.03 40);    /* cacau escuro */
+  --ink-soft:      oklch(0.45 0.04 40);
+  --muted:         oklch(0.68 0.03 50);
+  --primary:       oklch(0.55 0.12 35);    /* terracota */
+  --primary-ink:   oklch(0.98 0.02 75);
+  --accent:        oklch(0.78 0.09 80);    /* mel/dourado */
+  --accent-2:      oklch(0.82 0.06 25);    /* rosa pêssego */
+  --line:          oklch(0.88 0.02 65);
+  --shadow: 0 1px 2px rgba(82, 47, 28, 0.06), 0 12px 30px -18px rgba(82, 47, 28, 0.25);
+  --paper-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.42  0 0 0 0 0.30  0 0 0 0 0.20  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* paleta alternativa A2: sage */
+[data-variation="aconchegante"][data-palette="sage-honey"] {
+  --bg:        oklch(0.96 0.02 130);
+  --bg-alt:    oklch(0.92 0.03 130);
+  --primary:   oklch(0.48 0.08 150);
+  --accent:    oklch(0.78 0.10 80);
+  --accent-2:  oklch(0.80 0.06 60);
+  --ink:       oklch(0.28 0.03 150);
+  --ink-soft:  oklch(0.45 0.04 150);
+  --line:      oklch(0.87 0.03 130);
+}
+
+/* paleta alternativa A3: blush */
+[data-variation="aconchegante"][data-palette="blush-cacao"] {
+  --bg:        oklch(0.97 0.02 20);
+  --bg-alt:    oklch(0.93 0.04 20);
+  --primary:   oklch(0.42 0.08 30);
+  --accent:    oklch(0.82 0.08 20);
+  --accent-2:  oklch(0.85 0.05 40);
+  --ink:       oklch(0.28 0.04 30);
+  --line:      oklch(0.88 0.03 20);
+}
+
+/* =========================================================
+   VARIATION B — DOCE & LÚDICA
+   Cores vivas, blobs, cake-first, formas arredondadas
+   ========================================================= */
+[data-variation="ludica"] {
+  --bg:            oklch(0.985 0.01 85);   /* off-white limpo */
+  --bg-alt:        oklch(0.96 0.04 350);   /* rosa chiclete claro */
+  --surface:       #ffffff;
+  --ink:           oklch(0.22 0.04 280);
+  --ink-soft:      oklch(0.40 0.05 280);
+  --muted:         oklch(0.60 0.03 280);
+  --primary:       oklch(0.64 0.19 360);   /* pink forte */
+  --primary-ink:   #ffffff;
+  --accent:        oklch(0.78 0.17 80);    /* amarelo alegre */
+  --accent-2:      oklch(0.70 0.16 220);   /* azul candy */
+  --accent-3:      oklch(0.72 0.17 145);   /* verde hortelã */
+  --line:          oklch(0.92 0.02 340);
+  --shadow: 0 4px 0 oklch(0.22 0.04 280 / 0.1), 0 18px 40px -20px rgba(255, 60, 140, 0.35);
+  --paper-noise: none;
+}
+[data-variation="ludica"][data-palette="blueberry"] {
+  --primary:   oklch(0.58 0.18 255);
+  --accent:    oklch(0.78 0.17 80);
+  --accent-2:  oklch(0.72 0.17 355);
+  --accent-3:  oklch(0.72 0.17 145);
+  --bg-alt:    oklch(0.94 0.05 250);
+}
+[data-variation="ludica"][data-palette="tropical"] {
+  --primary:   oklch(0.66 0.19 35);   /* laranja vivo */
+  --accent:    oklch(0.82 0.17 130);  /* lima */
+  --accent-2:  oklch(0.68 0.18 340);  /* magenta */
+  --accent-3:  oklch(0.74 0.16 200);  /* turquesa */
+  --bg-alt:    oklch(0.96 0.05 60);
+}
+
+/* =========================================================
+   VARIATION C — HÍBRIDA (equilíbrio)
+   Base pastel + toques vivos, tipografia serif elegante
+   ========================================================= */
+[data-variation="hibrida"] {
+  --bg:            oklch(0.97 0.015 50);
+  --bg-alt:        oklch(0.92 0.03 45);
+  --surface:       #ffffff;
+  --ink:           oklch(0.24 0.04 30);
+  --ink-soft:      oklch(0.44 0.05 30);
+  --muted:         oklch(0.62 0.03 40);
+  --primary:       oklch(0.45 0.11 30);    /* cacau avermelhado */
+  --primary-ink:   oklch(0.98 0.02 75);
+  --accent:        oklch(0.72 0.14 20);    /* coral */
+  --accent-2:      oklch(0.78 0.12 170);   /* verde-água */
+  --accent-3:      oklch(0.78 0.14 90);    /* dourado */
+  --line:          oklch(0.88 0.02 45);
+  --shadow: 0 1px 2px rgba(60, 30, 20, 0.06), 0 20px 50px -24px rgba(60, 30, 20, 0.3);
+  --paper-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.42  0 0 0 0 0.30  0 0 0 0 0.20  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+[data-variation="hibrida"][data-palette="rose-eucalipto"] {
+  --primary:   oklch(0.42 0.07 30);
+  --accent:    oklch(0.78 0.10 355);
+  --accent-2:  oklch(0.76 0.09 160);
+  --accent-3:  oklch(0.80 0.12 85);
+  --bg-alt:    oklch(0.94 0.02 355);
+}
+[data-variation="hibrida"][data-palette="mocha-menta"] {
+  --primary:   oklch(0.35 0.04 60);
+  --accent:    oklch(0.78 0.10 160);
+  --accent-2:  oklch(0.82 0.08 80);
+  --accent-3:  oklch(0.70 0.13 30);
+  --bg-alt:    oklch(0.93 0.02 70);
+}
