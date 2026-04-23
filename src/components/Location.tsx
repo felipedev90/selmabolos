@@ -38,7 +38,7 @@ export default function Location() {
               </div>
               <div className="pt-1">
                 <p className="font-sans font-semibold text-ink text-base">
-                  Rua Tanque Velho, 55 — Vila Iguaçu
+                  Rua Tanque Velho, 55 - Vila Iguaçu
                 </p>
                 <p className="font-sans text-ink-soft text-sm">
                   Várzea Paulista, SP • CEP 13225-535

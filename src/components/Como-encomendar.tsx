@@ -38,8 +38,8 @@ export default function ComoEncomendar() {
             Como encomendar
           </h2>
           <p className="font-sans text-ink-soft max-w-2xl mx-auto text-lg mt-3">
-            Do primeiro clique ao bolo na sua mesa em quatro passos. Sem
-            complicação, sem cadastro.
+            Do primeiro clique ao bolo na sua mesa em quatro passos.
+            <br /> Sem complicação, sem cadastro.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function ComoEncomendar() {
                 {p.t}
               </h4>
 
-              <p className="font-sans text-ink-soft text-[15px] text-center md:text-start leading-relaxed">
+              <p className=" font-sans text-ink-soft text-[15px] text-center leading-relaxed">
                 {p.d}
               </p>
             </div>

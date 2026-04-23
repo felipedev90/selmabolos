@@ -16,8 +16,7 @@ export default function Galeria() {
             Galeria de bolos
           </h2>
           <p className="font-sans text-ink-soft max-w-2xl mx-auto text-lg mt-3">
-            Festas, chás revelação, casamentos e momentos do dia a dia — feitos
-            pela Selma.
+            Festas, chás revelação, casamentos e momentos do dia a dia.
           </p>
         </div>
 

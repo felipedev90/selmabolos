@@ -4,7 +4,7 @@ import { useState } from "react";
 import { faqData } from "@/src/data/faqData";
 
 export default function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section className="py-section-y bg-bg-alt md:scroll-mt-32" id="faq">
@@ -18,7 +18,7 @@ export default function Faq() {
             Perguntas que a gente mais ouve
           </h2>
           <p className="font-sans text-ink-soft max-w-2xl mx-auto text-lg mt-3">
-            Se ficar alguma dúvida, é só chamar no WhatsApp.
+            Se ficar alguma dúvida, é só chamar no WhatsApp!
           </p>
         </div>
 

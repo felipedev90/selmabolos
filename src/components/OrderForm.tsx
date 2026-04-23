@@ -62,8 +62,8 @@ export default function OrderForm() {
           Monte seu bolo
         </h2>
         <p className="font-sans text-ink-soft max-w-2xl mx-auto text-lg mt-3">
-          Escolha a base, o sabor e o tamanho. O preço aparece na hora e você
-          envia direto pro WhatsApp.
+          Escolha a base, o sabor e o tamanho. <br /> O preço aparece na hora e
+          você envia direto pro WhatsApp.
         </p>
       </div>
 

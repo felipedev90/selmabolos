@@ -17,8 +17,8 @@ export default function NossasDelicias() {
             Nossas delícias
           </h2>
           <p className="font-sans text-ink-soft max-w-2xl mx-auto text-lg mt-3">
-            Uma amostra dos bolos mais pedidos. Cada um pode ser adaptado ao
-            tema do seu evento.
+            Uma amostra dos bolos mais pedidos. <br />
+            Cada um pode ser adaptado ao tema do seu evento.
           </p>
         </div>
 
