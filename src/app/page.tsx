@@ -2,30 +2,29 @@ import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 
-const Sabores = dynamic(() => import("../components/Sabores/Sabores"));
+const Sabores = dynamic(() => import("@/src/components/Sabores/Sabores"));
 const InfoSection = dynamic(
-  () => import("../components/InfoSection/InfoSection"),
+  () => import("@/src/components/InfoSection/InfoSection"),
 );
-const Sobre = dynamic(() => import("../components/Sobre/sobre"));
+const Sobre = dynamic(() => import("@/src/components/Sobre/sobre"));
 const ComoEncomendar = dynamic(
-  () => import("../components/Como-encomendar/Como_temp"),
+  () => import("@/src/components/Como-encomendar/Como-encomendar"),
 );
-const OrderForm = dynamic(() => import("../components/OrderForm/OrderForm"));
+const OrderForm = dynamic(() => import("@/src/components/OrderForm/OrderForm"));
 const NossasDelicias = dynamic(
-  () => import("../components/NossasDelicias/NossasDelicias"),
+  () => import("@/src/components/NossasDelicias/NossasDelicias"),
 );
-const Galeria = dynamic(() => import("../components/Galeria/Gal_temp"));
-const Faq = dynamic(() => import("../components/FAQ/FAQ_temp"));
+const Galeria = dynamic(() => import("@/src/components/Galeria/Galeria"));
+const Faq = dynamic(() => import("@/src/components/FAQ/Faq"));
 const Testimonials = dynamic(
-  () => import("../components/Testimonials/Testimonials"),
+  () => import("@/src/components/Testimonials/Testimonials"),
 );
-const Location = dynamic(() => import("../components/Location/Location"));
-const Footer = dynamic(() => import("../components/Footer/Footer"));
+const Location = dynamic(() => import("@/src/components/Location/Location"));
+const Footer = dynamic(() => import("@/src/components/Footer/Footer"));
 
 export default function Home() {
   return (
     <main>
-      
       <Navbar />
       <Hero />
 
