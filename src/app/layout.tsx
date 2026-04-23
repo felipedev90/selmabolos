@@ -26,14 +26,14 @@ const dmSerif = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-display",
-  display: "optional",
+  display: "swap", 
 });
 
 const alexBrush = Alex_Brush({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-hand",
-  display: "optional",
+  display: "swap", 
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://selmabolos.com.br";
@@ -141,7 +141,7 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       // Aqui inserimos TODAS as variáveis de fonte para o Tailwind enxergar
-      className={`${jakarta.variable} ${noto.variable} ${dmSerif.variable} ${alexBrush.variable}`}
+      className={`${jakarta.variable} ${noto.variable} ${dmSerif.variable} ${alexBrush.variable} scroll-smooth`}
       data-variation="aconchegante"
       data-palette="blush-cacao"
       data-density="comfortable"

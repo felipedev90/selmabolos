@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
 @layer components {
   .material-symbols-outlined {
     font-variation-settings:

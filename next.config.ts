@@ -4,6 +4,7 @@ const nextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
   images: {
+    formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
