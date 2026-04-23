@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Toaster } from "sonner";
 import { faqData } from "@/src/data/faqData";
 import {
   Plus_Jakarta_Sans,
@@ -8,6 +7,7 @@ import {
   Alex_Brush,
 } from "next/font/google";
 import "@/src/styles/globals.css";
+import ToasterWrapper from "@/src/components/ToasterWrapper";
 
 // --- CONFIGURAÇÃO DAS FONTES ---
 const jakarta = Plus_Jakarta_Sans({
@@ -26,14 +26,14 @@ const dmSerif = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-display",
-  display: "swap", 
+  display: "swap",
 });
 
 const alexBrush = Alex_Brush({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-hand",
-  display: "swap", 
+  display: "swap",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://selmabolos.com.br";
@@ -157,7 +157,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-bg text-ink font-sans selection:bg-primary selection:text-primary-ink min-h-screen antialiased">
-        <Toaster position="bottom-center" richColors />
+        <ToasterWrapper />
         {children}
       </body>
     </html>

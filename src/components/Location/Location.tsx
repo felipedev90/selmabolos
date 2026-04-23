@@ -1,16 +1,20 @@
-import { MapPin, Phone, Clock } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { MapPin, Phone, Clock, Map } from "lucide-react";
 
 export default function Location() {
+  // Estado para controlar se o iframe do mapa deve ser renderizado
+  const [showMap, setShowMap] = useState(false);
+
   return (
     <section
-      // Usando py-section-y para espaçamento vertical e bg-bg-alt para contraste suave
       className="py-section-y px-6 bg-bg-alt md:scroll-mt-32"
       id="localizacao"
     >
       <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* COLUNA ESQUERDA: Texto e Contatos */}
         <div className="flex flex-col gap-6">
-          {/* Cabeçalho */}
           <div>
             <span className="font-hand text-2xl md:text-3xl text-primary -rotate-3 inline-block mb-1">
               Onde estamos
@@ -28,7 +32,6 @@ export default function Location() {
 
           {/* Lista de Contatos/Infos */}
           <div className="space-y-4 max-w-md">
-            {/* Endereço */}
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-theme-md bg-primary/15 flex items-center justify-center flex-shrink-0 text-primary">
                 <MapPin size={24} />
@@ -43,7 +46,6 @@ export default function Location() {
               </div>
             </div>
 
-            {/* Telefone */}
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-theme-md bg-primary/15 flex items-center justify-center flex-shrink-0 text-primary">
                 <Phone size={24} />
@@ -58,7 +60,6 @@ export default function Location() {
               </div>
             </div>
 
-            {/* Horários */}
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-theme-md bg-primary/15 flex items-center justify-center flex-shrink-0 text-primary">
                 <Clock size={24} />
@@ -75,17 +76,37 @@ export default function Location() {
           </div>
         </div>
 
-        <div className="rounded-theme-lg overflow-hidden shadow-theme h-[400px] md:h-[500px] relative bg-surface border border-line">
-          <iframe
-            title="Localização Várzea Paulista"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.6240709153298!2d-46.849029430312406!3d-23.22501699868953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf20ebf2eb4119%3A0xd1e5d6fdfff2ad7!2sR.%20Tanque%20Velho%2C%2055%20-%20Vila%20Iguacu%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013225-600!5e0!3m2!1spt-BR!2sbr!4v1774880468957!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+        {/* COLUNA DIREITA: MAPA (Com Facade Pattern) */}
+        <div className="rounded-theme-lg overflow-hidden shadow-theme h-[400px] md:h-[500px] relative bg-surface border border-line flex items-center justify-center">
+          {!showMap ? (
+            // FACHADA: Interface leve que aparece antes de carregar o mapa pesado
+            <div className="flex flex-col items-center justify-center gap-4 p-6 text-center w-full h-full bg-surface">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+                <Map size={32} />
+              </div>
+              <p className="font-sans text-ink-soft max-w-[250px]">
+                Clique para visualizar o mapa interativo do Google.
+              </p>
+              <button
+                onClick={() => setShowMap(true)}
+                className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-theme-md font-sans font-medium text-ink border border-line hover:border-primary hover:text-primary transition-colors bg-bg"
+              >
+                Carregar Mapa
+              </button>
+            </div>
+          ) : (
+            // IFRAME REAL: Só é renderizado após o clique
+            <iframe
+              title="Localização Várzea Paulista"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.6240709153298!2d-46.849029430312406!3d-23.22501699868953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf20ebf2eb4119%3A0xd1e5d6fdfff2ad7!2sR.%20Tanque%20Velho%2C%2055%20-%20Vila%20Iguacu%2C%20V%C3%A1rzea%20Paulista%20-%20SP%2C%2013225-600!5e0!3m2!1spt-BR!2sbr!4v1774880468957!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          )}
         </div>
       </div>
     </section>
