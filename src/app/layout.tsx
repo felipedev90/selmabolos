@@ -78,6 +78,9 @@ export const metadata: Metadata = {
       "Bolos artesanais decorados para festas e eventos. Sabores exclusivos, ingredientes selecionados e muito amor em cada fatia.",
     images: ["/images/hero/hero.webp"],
   },
+  verification: {
+    google: "LxXm8tkf_X-bX3cfSuTCRNu7jbBcwknqIH0yNBTj8EE",
+  },
   alternates: {
     canonical: siteUrl,
   },
