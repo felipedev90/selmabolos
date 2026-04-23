@@ -18,7 +18,7 @@ Landing page para uma confeitaria artesanal real, desenvolvida com Next.js 15 e 
 
 | Performance | Accessibility | Best Practices | SEO |
 | :---------: | :-----------: | :------------: | :-: |
-|     97      |      97       |      100       | 100 |
+|     92      |      99       |      100       | 100 |
 
 ---
 
