@@ -28,7 +28,7 @@ export default function InfoSection() {
           </h3>
           <p className="text-secondary font-medium mb-4">Segunda a Domingo</p>
           <p className="text-sm text-secondary mt-2">
-            Entregas de seg. a qui. Retirada agendada nas sextas, sábados e
+            Entregas de seg. a qui. - Retirada agendada: sextas, sábados e
             domingos.
           </p>
         </div>

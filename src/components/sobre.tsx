@@ -10,14 +10,12 @@ export default function Sobre() {
       <div className="max-w-[1240px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Foto */}
-          <div
-            // rounded-theme-lg e shadow-theme aplicam os tokens de borda e sombra
-            className="aspect-[4/5] rounded-theme-lg overflow-hidden relative shadow-theme bg-surface"
-          >
+          <div className="aspect-[4/5] rounded-theme-lg overflow-hidden relative shadow-theme bg-surface">
             <Image
               src="/images/sobre/selma.webp"
               alt="Selma preparando um bolo na cozinha"
               fill
+              sizes="(max-width: 768px) 100vw, 600px"
               className="object-cover object-center"
             />
           </div>
@@ -51,7 +49,7 @@ export default function Sobre() {
             <div className="divide-y divide-line">
               {[
                 ["20+", "anos fazendo bolos"],
-                ["2.400", "bolos entregues"],
+                ["2.000+", "bolos entregues"],
                 ["4,9 ★", "de média no Google"],
               ].map(([n, l]) => (
                 <div key={l} className="flex items-baseline gap-4 py-4">

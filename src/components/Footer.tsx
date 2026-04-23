@@ -40,43 +40,43 @@ export default function Footer() {
 
           {/* Coluna 2: Navegação */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-serif font-medium text-lg text-bg underline">
+            <h4 className="font-serif text-yellow-500 font-medium text-lg text-bg ">
               Navegação
             </h4>
             <nav className="flex flex-col gap-3 font-sans text-[15px] text-bg/80">
               <a
                 href="#sabores"
-                className="hover:text-primary transition-colors w-fit"
+                className="hover:text-yellow-500 transition-colors w-fit"
               >
                 Sabores
               </a>
               <a
                 href="#sobre"
-                className="hover:text-primary transition-colors w-fit"
+                className="hover:text-yellow-500 transition-colors w-fit"
               >
                 A Selma
               </a>
               <a
                 href="#como"
-                className="hover:text-primary transition-colors w-fit"
+                className="hover:text-yellow-500 transition-colors w-fit"
               >
                 Como encomendar
               </a>
               <a
                 href="#cardapio"
-                className="hover:text-primary transition-colors w-fit"
+                className="hover:text-yellow-500 transition-colors w-fit"
               >
                 Monte seu bolo
               </a>
               <a
                 href="#galeria"
-                className="hover:text-primary transition-colors w-fit"
+                className="hover:text-yellow-500 transition-colors w-fit"
               >
                 Galeria
               </a>
               <a
                 href="#faq"
-                className="hover:text-primary transition-colors w-fit"
+                className="hover:text-yellow-500 transition-colors w-fit"
               >
                 Dúvidas
               </a>
@@ -85,40 +85,39 @@ export default function Footer() {
 
           {/* Coluna 3: Contato */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-serif font-medium text-lg text-bg underline">
+            <h4 className="font-serif text-yellow-500 font-medium text-lg text-bg ">
               Contato
             </h4>
             <div className="flex flex-col gap-3 font-sans text-[15px] text-bg/80">
-              <span>(11) 97387–9147</span>
               <span>Rua Tanque Velho, 55</span>
               <span>Várzea Paulista, SP</span>
+              <span>(11) 97387–9147</span>
               <span>Atend. via WhatsApp</span>
             </div>
           </div>
 
           {/* Coluna 4: Redes e Avaliação */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-serif font-medium text-lg text-bg">
+            <h4 className="font-serif text-yellow-500 font-medium text-lg text-bg">
               Siga a Selma
             </h4>
 
-            <div className="flex gap-4">
+            <div className="flex  gap-5">
               <a
                 href="https://www.instagram.com/selmabolos._/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-bg/30 flex items-center justify-center hover:border-bg hover:bg-bg/10 transition-all group"
+                className="group-hover:scale-110 group-hover:text-yellow-500 transition-transform"
               >
-                <InstagramIcon className="w-5 h-5 text-bg/90 group-hover:text-bg" />
-                <span className="sr-only">Instagram</span>
+                <InstagramIcon className="w-7 h-7 text-bg/90 group-hover:text-bg " />
+                <span className="sr-only ">Instagram</span>
               </a>
               <a
                 href={`https://wa.me/${whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-bg/30 flex items-center justify-center hover:border-bg hover:bg-bg/10 transition-all group"
               >
-                <Phone className="w-5 h-5 text-bg/90 group-hover:text-bg" />
+                <Phone className="w-7 h-7 text-bg/90 group-hover:text-bg" />
                 <span className="sr-only">WhatsApp</span>
               </a>
             </div>
@@ -127,10 +126,10 @@ export default function Footer() {
               href={googleReviewLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-bg/30 hover:border-bg hover:bg-bg/10 transition-all group w-fit"
+              className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-yellow-500 transition-all group w-fit"
             >
-              <Star className="w-4 h-4 text-bg group-hover:scale-110 transition-transform" />
-              <span className="font-sans font-medium text-sm text-bg tracking-wide">
+              <Star className="w-4 h-4 text-bg group-hover:scale-110 group-hover:text-yellow-500 transition-transform" />
+              <span className="font-sans font-medium text-sm text-bg tracking-wide  group-hover:text-yellow-500 transition-transform">
                 Avalie no Google
               </span>
             </a>
@@ -149,7 +148,7 @@ export default function Footer() {
               href="https://felipe-silva90-portfolio.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-bg hover:text-primary font-medium transition-colors"
+              className="text-bg hover:text-yellow-500 font-medium transition-colors"
             >
               Felipe Augusto 🍃
             </a>
