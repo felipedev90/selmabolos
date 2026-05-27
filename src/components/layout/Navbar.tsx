@@ -3,9 +3,9 @@ import { navBarData } from "@/src/data/navBarData";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 w-full z-50 bg-[#faf9f6]/90 backdrop-blur-md shadow-sm">
-      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <div className="font-hand italic font-bold text-[2.5rem] lg:text-6xl text-primary tracking-wide">
+    <nav className="sticky top-0 max-w-360 mx-auto z-50 bg-[#faf9f6]/90 backdrop-blur-md shadow-sm">
+      <div className="flex justify-between items-center px-6 py-4 mx-auto">
+        <div className="font-hand italic font-bold text-4xl text-primary tracking-wide">
           <Link href="#hero">Selma Bolos</Link>
         </div>
         <div className="hidden lg:flex gap-8 items-center text-3xl font-medium font-hand">
