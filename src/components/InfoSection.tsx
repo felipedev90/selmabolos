@@ -3,7 +3,7 @@ import { Scale, Store, CreditCard } from "lucide-react";
 
 export default function InfoSection() {
   return (
-    <section className="py-6 md:py-10 px-6 bg-surface-container-low">
+    <section className="py-6 md:py-10 px-6 bg-bg-alt">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-surface p-8 rounded-2xl shadow-sm border border-outline-variant/30 text-center hover:shadow-md transition-shadow flex flex-col items-center">
           <div className="bg-bg rounded-full p-3">

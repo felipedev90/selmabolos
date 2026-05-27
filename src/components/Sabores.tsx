@@ -3,10 +3,10 @@ import { menuData } from "@/src/data/menuData";
 export default function Sabores() {
   return (
     <section
-      className="py-section-y px-6 bg-bg-alt md:scroll-mt-24"
+      className="pt-[64px] lg:pt-[120px] px-6 bg-bg-alt md:scroll-mt-24"
       id="sabores"
     >
-      <div className="max-w-[1240px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center flex flex-col items-center gap-2 mb-block-gap md:mb-16">
           <span className="font-hand text-3xl md:text-4xl text-primary -rotate-3 inline-block">
             Conheça nosso
