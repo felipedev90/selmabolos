@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="font-hand italic font-bold text-[2.5rem] lg:text-6xl text-primary tracking-wide">
           <Link href="#hero">Selma Bolos</Link>
         </div>
-        <div className="hidden xl:flex gap-8 items-center text-3xl font-medium font-hand">
+        <div className="hidden lg:flex gap-8 items-center text-3xl font-medium font-hand">
           {navBarData.map((item) => (
             <Link
               key={item.name}
