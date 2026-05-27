@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/layout/Navbar";
 import Hero from "../components/Hero";
 
 const Sabores = dynamic(() => import("@/src/components/Sabores"));
@@ -10,7 +10,7 @@ const NossasDelicias = dynamic(() => import("@/src/components/NossasDelicias"));
 const Galeria = dynamic(() => import("@/src/components/Galeria"));
 
 const Location = dynamic(() => import("@/src/components/Location"));
-const Footer = dynamic(() => import("@/src/components/Footer"));
+const Footer = dynamic(() => import("@/src/components/layout/Footer"));
 
 export default function Home() {
   return (
