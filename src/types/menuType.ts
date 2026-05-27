@@ -1,3 +1,8 @@
+export type NavBarItem = {
+  name: string;
+  href: string;
+};
+
 export interface MenuTypes {
   name: string;
   price: number;
