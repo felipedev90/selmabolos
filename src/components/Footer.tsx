@@ -25,42 +25,33 @@ export default function Footer() {
     <footer className="bg-ink pt-16 pb-8 text-bg">
       <div className="max-w-[1240px] mx-auto px-6">
         {/* Grid Principal de 4 Colunas */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-18 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-28 mb-16">
           {/* Coluna 1: Marca e Sobre */}
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <span className="font-hand italic text-5xl tracking-tight text-bg">
+              <h2 className="font-hand italic text-5xl tracking-tight text-bg">
                 Selma Bolos
-              </span>
+              </h2>
             </div>
             <p className="font-sans italic text-bg/80 text-[15px] leading-relaxed max-w-xs mt-1">
-              Bolos artesanais para aniversários, festas e momentos especiais.
+              Oi, eu sou a Selma! <br />
+              Faço bolos há mais de 20 anos. Comecei na cozinha de casa, para
+              aniversários da família, e hoje a Selma Bolos atende Várzea
+              Paulista, Jundiaí e região.
             </p>
           </div>
 
           {/* Coluna 2: Navegação */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-serif text-yellow-500 font-medium text-lg text-bg ">
+            <h3 className="font-serif text-yellow-500 font-medium text-lg text-bg ">
               Navegação
-            </h4>
+            </h3>
             <nav className="flex flex-col gap-3 font-sans text-[15px] text-bg/80">
               <a
                 href="#sabores"
                 className="hover:text-yellow-500 transition-colors w-fit"
               >
                 Sabores
-              </a>
-              <a
-                href="#sobre"
-                className="hover:text-yellow-500 transition-colors w-fit"
-              >
-                A Selma
-              </a>
-              <a
-                href="#como"
-                className="hover:text-yellow-500 transition-colors w-fit"
-              >
-                Como encomendar
               </a>
               <a
                 href="#cardapio"
@@ -74,20 +65,14 @@ export default function Footer() {
               >
                 Galeria
               </a>
-              <a
-                href="#faq"
-                className="hover:text-yellow-500 transition-colors w-fit"
-              >
-                Dúvidas
-              </a>
             </nav>
           </div>
 
           {/* Coluna 3: Contato */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-serif text-yellow-500 font-medium text-lg text-bg ">
+            <h3 className="font-serif text-yellow-500 font-medium text-lg text-bg ">
               Contato
-            </h4>
+            </h3>
             <div className="flex flex-col gap-3 font-sans text-[15px] text-bg/80">
               <span>Rua Tanque Velho, 55</span>
               <span>Várzea Paulista, SP</span>
@@ -98,9 +83,9 @@ export default function Footer() {
 
           {/* Coluna 4: Redes e Avaliação */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-serif text-yellow-500 font-medium text-lg text-bg">
+            <h3 className="font-serif text-yellow-500 font-medium text-lg text-bg">
               Siga a Selma
-            </h4>
+            </h3>
 
             <div className="flex  gap-5">
               <a

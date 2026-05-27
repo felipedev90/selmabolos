@@ -15,12 +15,6 @@ export default function Navbar() {
             Sabores
           </a>
           <a
-            className=" text-secondary hover:text-primary transition-colors"
-            href="#encomendar"
-          >
-            Como encomendar
-          </a>
-          <a
             className="  text-secondary hover:text-primary transition-colors"
             href="#monte-seu-bolo"
           >
